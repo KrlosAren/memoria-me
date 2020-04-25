@@ -3,48 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
     <title>Memorizacion</title>
 </head>
-<body class="principal">
-        <nav class="nav">
-            <ul class="nav__lista">
-                <li class="nav__lista--item"> 
-                    <a href="https://krlosaren.github.io/">Home|</a>
-                </li >
-                <li class="nav__lista--item">
-                    <a href="https://krlosaren.github.io/Platzi-Video/">Platzi-Video|</a>
-                </li>
-                <li class="nav__lista--item">
-                    <a href="/">Memoria|</a>
-                </li>
-                <li class="nav__lista--item">
-                    <button class="btn-sol" id="btnInicio" onclick="cambiarModoOscuro()">&#127769</button>
-                </li>
-            </ul>
-        </nav>
-
-        <section class="principal__grid">
-            <span class="gameboard">
-                <div class="grid-item colorA" id="1"></div>
-                <div class="grid-item colorB" id="2"></div>
-                <div class="grid-item colorC" id="3"></div>
-                <div class="grid-item colorD" id="5"></div>
-            </span>
-        </section> 
-
+<body>   
+       <div class="content">
+            <nav class="nav">
+                <ul class="nav__lista">
+                    <li class="nav__lista--item"> 
+                        <a href="https://krlosaren.github.io/">Home</a>
+                    </li >
+                    <li class="nav__lista--item">
+                        <a href="https://krlosaren.github.io/Platzi-Video/">Platzi-Video</a>
+                    </li>
+                    <li class="nav__lista--item">
+                        <a href="/">Juego Memorizar</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="container" id="contenedorInicio">
+                <p>
+                    <button class="btnInicio" id="btnInicio" onclick="start()">Start</button>
+                </p>
+            </div>
+        <div class="container hide" id="contenedorGame">
+            <section class="container__gameboard">
+                <div class="container__gameboard--item colorBase" id="colorA"></div>
+                <div class="container__gameboard--item colorBase" id="colorB"></div>
+                <div class="container__gameboard--item colorBase" id="colorC"></div>
+                <div class="container__gameboard--item colorBase" id="colorD"></div>
+            </section>
+        </div>
         <footer class="footer">
-            Hecho por Carlos | Visita mis respositorios&nbsp;  
-            <a href="https://github.com/KrlosAren">
-                <img src="assets/icon-github.png" alt="icon-github">
-            </a> 
-        </footer>
-        
+             Hecho por Carlos L. Zavarce |&nbsp;&nbsp;<a href="https://github.com/KrlosAren"><img src="https://img.icons8.com/material-rounded/24/ffd628/github.png"/></a>
+        </footer>   
+       </div>
+    
+    
+    
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="game-js.js"></script>
+
+
 </body>
 </html>
-
-
-<!--<button class="btn-inicio" id="btnInicio" onclick="start()">A Darle!</button>-->
