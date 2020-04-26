@@ -78,9 +78,10 @@
 .colorBase{
     background: #ffce00;
 }
-.opacity{
-    opacity: .5;
+.colorBase.opacity{
+    background: #ffcc0075;
 }
+/*
 .colorA.light{
     background: #264653;
 }
@@ -93,6 +94,7 @@
 .colorD.light{
     background: #d62828;
 }
+*/
 
 /* Pantalla inicio */ 
 

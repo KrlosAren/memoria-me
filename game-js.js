@@ -59,7 +59,7 @@ class Juego{
     
     subirNivel(){
         this.subnivel = 0
-        this.iluminarCuadrados()
+        this.iluminarColor()
         this.eventoBotones()
     }
 
@@ -89,22 +89,20 @@ class Juego{
         }
     }
 
-    encenderSecuencia(){
+    iluminarSecuencia(){
         for(let i = 0; i < this.nivel; i++){
             const color = this.cambiarNumeroAColores(this.secuencia[i])
-            setTimeout(() =>  this.iluminarCuadrados(color), 1000 * i)
+            setTimeout(() =>  this.iluminarColor(color), 1000 * i)
         }
     }
 
-   iluminarCuadrados(color){
-        this.colores[color].classList.remove('colorBase')
-        this.colores[color].classList.add('light')   
+    iluminarColor(color){
+        this.colores[color].classList.add('opacity')   
         setTimeout(() => this.apagarColor(color), 350)  
     }
 
     apagarColor(color){
-        this.colores[color].classList.remove('light')
-        this.colores[color].classList.add('colorBase')
+        this.colores[color].classList.remove('opacity')
         
     }
 
@@ -125,7 +123,7 @@ class Juego{
     elegirColor(ev){
        const nombreColor = ev.target.dataset.color
        const numeroColor = this.cambiarColoresANumero(nombreColor)
-       this.iluminarCuadrados(nombreColor)
+       this.iluminarColor(nombreColor)
        if(numeroColor === this.secuencia[this.subnivel]){
             this.subirNivel++
             if(this.subirNivel == this.nivel){
