@@ -97,12 +97,15 @@ class Juego{
     }
 
    iluminarCuadrados(color){
-        this.colores[color].classList.add('opacity')   
+        this.colores[color].classList.remove('colorBase')
+        this.colores[color].classList.add('light')   
         setTimeout(() => this.apagarColor(color), 350)  
     }
 
     apagarColor(color){
-        this.colores[color].classList.remove('opacity')
+        this.colores[color].classList.remove('light')
+        this.colores[color].classList.add('colorBase')
+        
     }
 
     eventoBotones(){
