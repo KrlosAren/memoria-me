@@ -90,20 +90,18 @@ class Juego{
     }
 
     iluminarSecuencia(){
-        for(let i = 0; i < this.nivel; i++){
-            const color = this.cambiarNumeroAColores(this.secuencia[i])
-            setTimeout(() =>  this.iluminarColor(color), 1000 * i)
+        for ( let i = 0; i < this.nivel; i++ ) {
+                const color = this.cambiarNumeroAColores(this.secuencia[i])
+                setTimeout(() =>  this.iluminarColor(color), 1000 * i)
+            }
         }
-    }
 
     iluminarColor(color){
-        this.colores[color].classList.add('opacity')   
-        setTimeout(() => this.apagarColor(color), 350)  
-    }
-
+        this.colores[color].classList.add('light')
+        setTimeout(() => this.apagarColor(color), 350)
+    }   
     apagarColor(color){
-        this.colores[color].classList.remove('opacity')
-        
+        this.colores[color].classList.remove('light')
     }
 
     eventoBotones(){
