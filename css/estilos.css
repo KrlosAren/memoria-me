@@ -78,22 +78,6 @@
 .colorBase{
     background: #ffce00;
 }
-.opacity{
-    opacity: .5;
-}
-
-.colorA{
-    background: #264653;
-}
-.colorB{
-    background: #2a9d8f;
-}
-.colorC{
-    background: #e76f51;
-}
-.colorD{
-    background: #d62828;
-}
 
 
 /* Pantalla inicio */ 
@@ -106,7 +90,9 @@
     display: none;
 }
 
-
+.opacity{
+    opacity: .5;
+}
 
 
 /* Swal Modal */

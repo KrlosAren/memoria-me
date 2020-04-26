@@ -55,11 +55,12 @@ class Juego{
     
     generarSecuencia(){
         this.secuencia = new Array(ULTIMO_NIVEL).fill(0).map( n => Math.round(Math.random() * 3) + 1 )  
+        
     }
     
     subirNivel(){
         this.subnivel = 0
-        this.iluminarColor()
+        this.iluminarSecuencia()
         this.eventoBotones()
     }
 
@@ -97,11 +98,13 @@ class Juego{
         }
 
     iluminarColor(color){
-        this.colores[color].classList.add('light')
-        setTimeout(() => this.apagarColor(color), 350)
+        console.log('On')
+       this.colores[color].classList.add('opacity')
+       setTimeout(() => this.apagarColor(color), 350)
     }   
     apagarColor(color){
-        this.colores[color].classList.remove('light')
+        console.log('Off')
+        this.colores[color].classList.remove('opacity')
     }
 
     eventoBotones(){
@@ -122,28 +125,25 @@ class Juego{
        const nombreColor = ev.target.dataset.color
        const numeroColor = this.cambiarColoresANumero(nombreColor)
        this.iluminarColor(nombreColor)
-       if(numeroColor === this.secuencia[this.subnivel]){
-            this.subirNivel++
-            if(this.subirNivel == this.nivel){
-                this.nivel++
-                this.removerEventosBotones()
-                if(this.nivel == (ULTIMO_NIVEL + 1)){
-                    this.ganaste()
-                }
-            }else{
-                setTimeout(this.subirNivel(), 1000);
+        if (numeroColor === this.secuencia[this.subnivel]) {
+            this.nivel++
+            this.removerEventosBotones()
+            if (this.nivel == ULTIMO_NIVEL + 1 ) {
+                this.ganaste()
+            } else {
+                setTimeout(this.subirNivel, 1000)
             }
-       }else{
-           this.perdiste()
-       }
+        } else {
+            this.perdiste()
+        }
     }
-
+     
     ganaste(){
-        alert('ganaste')
+        console.log('Ganaste')
     }
 
     perdiste(){
-        alert('perdiste')
+        console.log('Perdiste')
     }
 
 }
