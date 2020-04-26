@@ -46,6 +46,8 @@ class Juego{
     toggleBtnStart(){
         if (btnStart.classList.contains('hide')) {
             btnStart.classList.remove('hide')
+            containerGame.classList.add('hide')
+            containerInicio.classList.remove('hide')
         }else{
             btnStart.classList.add('hide')
             containerGame.classList.remove('hide')
@@ -98,12 +100,10 @@ class Juego{
         }
 
     iluminarColor(color){
-        console.log('On')
        this.colores[color].classList.add('opacity')
        setTimeout(() => this.apagarColor(color), 350)
     }   
     apagarColor(color){
-        console.log('Off')
         this.colores[color].classList.remove('opacity')
     }
 
@@ -132,19 +132,33 @@ class Juego{
                 this.ganaste()
             } else {
                 setTimeout(this.subirNivel, 1000)
+
             }
         } else {
             this.perdiste()
         }
     }
-     
+
     ganaste(){
-        console.log('Ganaste')
+        swal({
+            icon: "success",
+          })
+          .then( this.iniciar() )
     }
 
     perdiste(){
-        console.log('Perdiste')
+        swal({
+    title: "Fallaste, lo sentimos!!",
+    text: "Intentalo de nuevo. Supera tu marca",
+    icon: "error",
+    button: "OK"
+  })
+        .then(() => {
+            this.removerEventosBotones()
+            this.iniciar() 
+        })
     }
+
 
 }
 
