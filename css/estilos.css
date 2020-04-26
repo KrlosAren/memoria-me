@@ -57,13 +57,14 @@
     width: 100%;
     height: inherit;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-image: linear-gradient( #27496d 20%, #00909e 100%);
 }
 .container__gameboard{
     display: grid;
-    width: 500px;
+    width: 50%;
     height: 500px;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(2,1fr);
@@ -77,16 +78,19 @@
 .colorBase{
     background: #ffce00;
 }
-.colorA{
+.opacity{
+    opacity: .5;
+}
+.colorA.light{
     background: #264653;
 }
-.colorB{
+.colorB.light{
     background: #2a9d8f;
 }
-.colorC{
+.colorC.light{
     background: #e76f51;
 }
-.colorD{
+.colorD.light{
     background: #d62828;
 }
 
@@ -99,3 +103,47 @@
 .hide{
     display: none;
 }
+
+
+
+
+/* Swal Modal */
+
+.swal-modal {
+    background-color: #27496d;
+    border: 3px solid white;
+  }
+.swal-text{
+    font-size: 16px;
+    padding: 17px;
+    display: block;
+    margin: 22px;
+    text-align: center;
+    color: #ffce00;
+}
+.swal-button {
+    padding: 7px 19px;
+    border-radius: 2px;
+    background: #00909e;
+    font-size: 12px;
+  }
+  .swal-title {
+    color: #ffce00;
+    font-size: 24px;
+  }
+
+  /* BOTONES */
+
+  .btnInicio--button{
+      outline: none;
+      color: #ffce00;
+      font-size: 1.2em;
+      padding: 10px 100px;
+      background: #00909e;
+      border-radius: 20px;
+      border: 1px solid white;
+  }
+  .btnInicio--button:hover{
+      cursor: pointer;
+      background: #27496d;
+  }
