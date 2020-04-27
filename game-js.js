@@ -168,12 +168,3 @@ class Juego{
 function start(){
     window.juego = new Juego()
 }
-
-
-
-
-
-/*
-window.addEventListener('click',function(ev){
-    this.console.log(ev.target)
-})*/
