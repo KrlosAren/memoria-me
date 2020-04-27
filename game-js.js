@@ -9,7 +9,7 @@ const containerInicio = document.getElementById('contenedorInicio')
 
 const btnStart = document.getElementById('btnInicio')
 
-const ULTIMO_NIVEL = 1
+const ULTIMO_NIVEL = 10
 
 
 
