@@ -66,7 +66,7 @@ class Juego{
         this.eventoBotones()
     }
 
-    cambiarNumeroAColores(numero){
+    cambiarNumeroAColor(numero){
         switch (numero) {
             case 1:
                 return 'colorA'
@@ -79,7 +79,7 @@ class Juego{
         }
     }   
 
-    cambiarColoresANumero(color){
+    cambiarColorANumero(color){
         switch (color) {
             case 'colorA':
                     return 1
@@ -94,7 +94,7 @@ class Juego{
 
     iluminarSecuencia(){
         for ( let i = 0; i < this.nivel; i++ ) {
-                const color = this.cambiarNumeroAColores(this.secuencia[i])
+                const color = this.cambiarNumeroAColor(this.secuencia[i])
                 setTimeout(() =>  this.iluminarColor(color), 1000 * i)
             }
         }
@@ -123,17 +123,20 @@ class Juego{
 
     elegirColor(ev){
        const nombreColor = ev.target.dataset.color
-       const numeroColor = this.cambiarColoresANumero(nombreColor)
+       const numeroColor = this.cambiarColorANumero(nombreColor)
        this.iluminarColor(nombreColor)
-        if (numeroColor === this.secuencia[this.subnivel]) {
-            this.nivel++
-            this.removerEventosBotones()
-            if (this.nivel == ULTIMO_NIVEL + 1 ) {
-                this.ganaste()
-            } else {
-                setTimeout(this.subirNivel, 1000)
-
-            }
+        if (numeroColor === this.secuencia[this.subnivel]) 
+        {
+            this.subnivel++
+            if (this.subnivel == this.nivel) {
+                this.nivel++
+                this.removerEventosBotones()
+                if(this.nivel == ULTIMO_NIVEL + 1){
+                    this.ganaste()
+                }else{
+                    setTimeout(this.subirNivel, 1000)
+                }
+            } 
         } else {
             this.perdiste()
         }
