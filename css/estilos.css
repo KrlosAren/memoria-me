@@ -119,7 +119,21 @@
     color: #ffce00;
     font-size: 24px;
   }
-
+  .swal-icon--success:after, .swal-icon--success:before{
+      background: #27496d71 ;
+  }
+  .swal-icon--success{
+      border-color: #ffce00;
+  }
+  .swal-icon--success__line{
+    background-color: #ffce00 ;
+  }
+  .swal-icon--success__ring{
+      border: 4px solid #ffce00;
+  }
+  .swal-icon--success__hide-corners{
+    background-color: #27496d;
+  }
   /* BOTONES */
 
   .btnInicio--button{

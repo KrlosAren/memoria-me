@@ -9,7 +9,7 @@ const containerInicio = document.getElementById('contenedorInicio')
 
 const btnStart = document.getElementById('btnInicio')
 
-const ULTIMO_NIVEL = 10
+const ULTIMO_NIVEL = 1
 
 
 
@@ -144,7 +144,10 @@ class Juego{
 
     ganaste(){
         swal({
+            title: "Felicidades!",
+            text: "Superaste todos los niveles del Juego",
             icon: "success",
+            button: "Soy Genial!"
           })
           .then( this.iniciar() )
     }
@@ -152,9 +155,9 @@ class Juego{
     perdiste(){
         swal({
     title: "Fallaste, lo sentimos!!",
-    text: "Intentalo de nuevo. Supera tu marca",
+    text: "Intentalo de nuevo. Sabemos que puedes!",
     icon: "error",
-    button: "OK"
+    button: "Lo lograre!"
   })
         .then(() => {
             this.removerEventosBotones()
